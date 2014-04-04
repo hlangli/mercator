@@ -12,4 +12,4 @@ Mercator provides the developer with a set of tags with predefined CSS layout pr
 
 Behind the scenes it's a classic 3x3 cell table with a default width and height of 100%.
 
-One of the major differences from normal CSS layouts is that in order to make a scrollable webpage, you'll need to explicitly put the scrollable content inside a scrollable panel tag (<panel scroll="y">), or one could say that all content is by default fixed position (unless the content is larger than the viewport size).
+One of the major differences from normal CSS layouts is that in order to make a scrollable webpage, you'll need to explicitly put the scrollable content inside a scrollable panel tag (&lt;panel scroll="y"&gt;>), or one could say that all content is by default fixed position (unless the content is larger than the viewport size).
