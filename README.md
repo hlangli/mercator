@@ -11,3 +11,5 @@ Mercator brings back layouting in the markup, where the developer can easily con
 Mercator provides the developer with a set of tags with predefined CSS layout properties that determines the position of the content relative to the containers corners and edges, and relative to the other tags on the same level.
 
 Behind the scenes it's a classic 3x3 cell table with a default width and height of 100%.
+
+One of the major differences from normal CSS layouts is that in order to make a scrollable webpage, you'll need to explicitly put the scrollable content inside a scrollable panel tag (<panel scroll="y">), or one could say that all content is by default fixed position (unless the content is larger than the viewport size).
