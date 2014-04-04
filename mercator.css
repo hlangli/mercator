@@ -1,0 +1,111 @@
+body {
+	margin: 0px;
+	font-weight: bold;
+	font-size: 150%;
+	font-family: sans-serif;
+	overflow: hidden;
+}
+
+borderlayout:not([collapse="height"]):not([collapse="both"]) {
+	height: 100%;
+}
+
+borderlayout:not([collapse="width"]):not([collapse="both"]) {
+	width: 100%;
+}
+
+padding {
+	width: 100%;
+	height: 100%;	
+}
+
+borderlayout {
+	display: inline-table;
+}
+
+polar {
+	display: table-row;	
+}
+
+tropical {
+	display: table-row;
+	width: 100%;
+	height: 100%;
+}
+
+equator {
+	display: inline-table;
+	height: 100%;
+	width: 100%;
+}
+
+north, east, center, west, south {
+	display: table-cell;
+}
+
+east, center, west {
+	height: 100%;
+}
+
+.red {
+	background-color: #ff8888;
+	color: #ffffff;
+}
+.green {
+	background-color: #88ff88;
+}
+.yellow {
+	background-color: #ffff88;
+}
+.blue {
+	background-color: #8888ff;
+	color: #ffffff;
+}
+.gray {
+	background-color: lightgray;
+}
+
+north {
+	text-align: center;
+}
+east {
+	text-align: right;
+}
+center {
+	text-align: center;
+}
+center:not([collapse]) {
+	width: 100%;
+}
+west {
+	text-align: left;
+}
+south {
+	text-align: center;
+	vertical-align: bottom;
+}
+
+equator > * {
+	vertical-align: middle;
+}
+
+panel[scroll="y"] {
+	overflow-y: scroll;
+}
+panel[scroll="x"] {
+	overflow-x: scroll;
+}
+
+panel {
+	display: block;
+	width: 100%;
+}
+
+panel[scroll="y"] {
+	height: 100%;
+}
+
+filler {
+	display: block;
+}
+

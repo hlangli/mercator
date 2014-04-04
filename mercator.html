@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>Mercator</title>
+		<link rel="stylesheet" href="mercator.css"></link>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script language="javascript" type="text/javascript" src="mercator.js"></script>
+	</head>
+	<body>
+		<north collapse="height" height="70px" class="blue">
+			<west>NW</west>
+			<center>N</center>
+			<east>NE</east>
+		</north>
+		<west width="70px" class="green">W</west>
+		<center>
+			<padding size="40px">
+				<north class="blue">North</north>
+				<center class="gray">
+					<panel scroll="y">
+						<panel>
+							<center>
+								<padding size="120px">
+									<center>
+										<west width="60px" class="green">W</west>
+										<center>
+											<div><h1>Center</h1></div>
+											<div>This is an example of a border-layout in css</div>
+										</center>
+										<east width="60px" class="red">E</east>
+									</center>
+								</padding>
+							</center>
+						</panel>
+						<panel>
+							<center>
+								<padding size="40px">
+									<center>
+										<west>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</west>
+									</center>
+								</padding>
+							</center>
+						</panel>
+					</panel>
+				</center>
+				<south class="yellow">South</south>
+			</padding>
+		</center>
+		<east width="70px" class="red">E</east>
+		<south collapse="height" height="70px" class="yellow">
+			<west>SW</west>
+			<center>S</center>
+			<east>SE</east>
+		</south>
+	</body>
+</html>
+
