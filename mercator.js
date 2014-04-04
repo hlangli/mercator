@@ -1,4 +1,5 @@
 $(function() {
+	var corners = ["north", "west", "center", "east", "south"];
 	$("padding").each(function() {
 		// Apply padding
 		var size = $(this).attr("size");
@@ -36,13 +37,10 @@ $(function() {
 			$(this).children("south").attr("width", south);
 		}
 	});
-	$("north,west,center,east,south").each(function() {
+	$("north,west,east,south").each(function() {
 		// Insert fillers for corners without content
-		if($(this).html() == "") {
-			$(this).append("<filler/>");
-		}
-		else if($(this).children().size() == 0) {
-			$(this).html("<filler>"+$(this).text()+"</filler");
+		if($(this).children().size() == 0) {
+			$(this).html("<filler>"+$(this).text()+"</filler>");
 		}
 		var width = $(this).attr("width");
 		if(width) {
@@ -52,29 +50,32 @@ $(function() {
 		if(height) {
 			$(this).children("filler").attr("height", height);
 		}
+	});
+	$("north,west,center,east,south").each(function() {
 		// Wrap all child corners in borderlayout
 		var parent = $(this).parent();
 		if(!parent.is("borderlayout")) {
 			parent.children("north,west,center,east,south").wrapAll("<borderlayout/>");
 		}
 	});
-	$("north,west,center,east,south").each(function() {
-		if($(this).attr("collapse")) {
-			// Set collapse on child borderlayouts
-			$(this).children("borderlayout").attr("collapse", $(this).attr("collapse"));
+	$("borderlayout").each(function() {
+		if($(this).children("center").size() == 0) {
+			$(this).append("<center/>");
 		}
-	});
-	$("west[width],east[width]").each(function() {
-		var center = $(this).parent().children("center:not([collapse])");
-		if(center) {
-			center.attr("collapse", "width");
-		}
+		var cornerElements = $(this).children("north,west,center,east,south");
+		var north = $(this).children("north");
+		var west = $(this).children("west");
+		var center = $(this).children("center");
+		var east = $(this).children("east");
+		var south = $(this).children("south");
+		cornerElements.detach();
+		$(this).append(north, west, center, east, south);
 	});
 	$("borderlayout").each(function() {
 		// Make inner table for middle row (because css cannot define colspan - so we can only have one column)
-		$(this).children("west,center,east").wrapAll("<tropical><equator/></tropical>");
+		$(this).children("west,center,east").wrapAll("<row><cell><nested><row/></nested></cell></row>");
 		// Add table row to north and south
-		$(this).children("north,south").wrap("<polar/>");
+		$(this).children("north,south").wrap("<row collapse/>");
 	});
 	$("north,west,center,east,south,filler").each(function() {
 		// Set css width and height from attributes

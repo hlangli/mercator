@@ -23,23 +23,22 @@ borderlayout {
 	display: inline-table;
 }
 
-polar {
+row {
 	display: table-row;	
+	width: 100%;
 }
 
-tropical {
-	display: table-row;
-	width: 100%;
+row:not([collapse]) {
 	height: 100%;
 }
 
-equator {
+nested {
 	display: inline-table;
 	height: 100%;
 	width: 100%;
 }
 
-north, east, center, west, south {
+north, east, center, west, south, cell {
 	display: table-cell;
 }
 
@@ -85,7 +84,7 @@ south {
 	vertical-align: bottom;
 }
 
-equator > * {
+nested > row > * {
 	vertical-align: middle;
 }
 
@@ -109,3 +108,10 @@ filler {
 	display: block;
 }
 
+flow {
+	display: block;
+	text-align: left;
+	vertical-align: top;
+	width: 100%;
+	height: 100%;	
+}
