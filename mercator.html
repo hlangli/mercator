@@ -26,9 +26,37 @@
 			.gray {
 				background-color: lightgray;
 			}
+			layer center east, layer center west {
+				opacity: 0.5;
+				background-color: black;
+				color: white;
+				border-radius: 20px;
+			}
 		</style>
 	</head>
 	<body>
+		<layer>
+			<north>
+				<north height="80px"></north>
+				<west width="50px"></west>
+				<center>
+					<west>
+						<padding size="20px">Layer1</padding>
+					</west>
+				</center>
+			</north>
+		</layer>
+		<layer>
+			<south>
+				<center>
+					<east>
+						<padding size="20px">Layer2</padding>
+					</east>
+				</center>
+				<east width="20px"></east>
+				<south height="20px"></south>
+			</south>
+		</layer>
 		<north height="70px" class="blue">
 			<north>
 				<west>NW</west>

@@ -9,7 +9,7 @@ $(function() {
 		var west = $(this).attr("west");
 		var north = $(this).attr("north");
 		var south = $(this).attr("south");
-		$(this).children().wrapAll("<center/>");
+		$(this).contents().wrapAll("<center/>");
 		$(this).prepend("<west/>");
 		$(this).prepend("<north/>");
 		$(this).append("<east/>");
