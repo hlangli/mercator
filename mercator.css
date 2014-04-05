@@ -1,8 +1,5 @@
 body {
 	margin: 0px;
-	font-weight: bold;
-	font-size: 150%;
-	font-family: sans-serif;
 	overflow: hidden;
 }
 
@@ -46,24 +43,6 @@ east, center, west {
 	height: 100%;
 }
 
-.red {
-	background-color: #ff8888;
-	color: #ffffff;
-}
-.green {
-	background-color: #88ff88;
-}
-.yellow {
-	background-color: #ffff88;
-}
-.blue {
-	background-color: #8888ff;
-	color: #ffffff;
-}
-.gray {
-	background-color: lightgray;
-}
-
 north {
 	text-align: center;
 }
@@ -88,20 +67,17 @@ nested > row > * {
 	vertical-align: middle;
 }
 
+panel {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
 panel[scroll="y"] {
 	overflow-y: scroll;
 }
 panel[scroll="x"] {
 	overflow-x: scroll;
-}
-
-panel {
-	display: block;
-	width: 100%;
-}
-
-panel[scroll="y"] {
-	height: 100%;
 }
 
 filler {
@@ -115,3 +91,4 @@ flow {
 	width: 100%;
 	height: 100%;	
 }
+
