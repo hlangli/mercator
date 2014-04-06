@@ -37,18 +37,23 @@ $(function() {
 			$(this).children("south").attr("width", south);
 		}
 	});
-	$("north,west,east,south").each(function() {
+	$("north,west,east,south,center").each(function() {
 		// Insert fillers for corners without content
 		if($(this).children().size() == 0) {
-			$(this).html("<filler>"+$(this).text()+"</filler>");
+			if($(this).text() != "") {
+				$(this).html("<text>"+$(this).text()+"</text>");
+			}
+			else if(!$(this).is("center")) {
+				$(this).html("<filler/>");
+			}
 		}
 		var width = $(this).attr("width");
 		if(width) {
-			$(this).children("filler").attr("width", width);
+			$(this).children("filler,text").attr("width", width);
 		}
 		var height = $(this).attr("height");
 		if(height) {
-			$(this).children("filler").attr("height", height);
+			$(this).children("filler,text").attr("height", height);
 		}
 	});
 	$("north,west,center,east,south").each(function() {
@@ -77,7 +82,7 @@ $(function() {
 		// Add table row to north and south
 		$(this).children("north,south").wrap("<row collapse/>");
 	});
-	$("north,west,center,east,south,filler").each(function() {
+	$("north,west,center,east,south,filler,text").each(function() {
 		// Set css width and height from attributes
 		var width = $(this).attr("width");
 		if(width) {

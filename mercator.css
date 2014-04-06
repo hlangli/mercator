@@ -80,7 +80,7 @@ panel[scroll="x"] {
 	overflow-x: scroll;
 }
 
-filler {
+filler, text {
 	display: block;
 }
 
@@ -101,7 +101,13 @@ layer, borderlayout, row, cell, nested, filler, north, west, center, east, south
 	pointer-events: none;
 }
 
-north > *, west > *, center > *, east > *, south > *, padding > * {
+north > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding),
+west > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding),
+center > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding),
+east > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding),
+south > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding),
+padding > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding),
+filler > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding) {
 	pointer-events: auto;
 }
 
