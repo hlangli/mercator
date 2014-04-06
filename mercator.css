@@ -97,3 +97,11 @@ layer {
 	height: 100%;
 }
 
+layer, borderlayout, row, cell, nested, filler, north, west, center, east, south, padding {
+	pointer-events: none;
+}
+
+north > *, west > *, center > *, east > *, south > *, padding > * {
+	pointer-events: auto;
+}
+
