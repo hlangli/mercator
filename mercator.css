@@ -92,11 +92,23 @@ flow {
 	height: 100%;	
 }
 
-layer {
-	position: absolute;
-	height: 100%;
+panel,north,west,center,east,south {
+	position: relative;
 }
 
+layer {
+	position: absolute;
+}
+
+layer[north],layer[west],layer[east],layer[south],layer[width],layer[height] {
+	display: block;
+}
+
+layer:not([north]):not([south]):not([west]):not([east]):not([width]):not([height]) {
+	display: inline;
+}
+
+/* Not supported in IE (all versions) and webkit on Android
 layer, borderlayout, row, cell, nested, filler, north, west, center, east, south, padding {
 	pointer-events: none;
 }
@@ -110,4 +122,4 @@ padding > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(fill
 filler > *:not(layer):not(borderlayout):not(row):not(cell):not(nested):not(filler):not(north):not(west):not(center):not(east):not(south):not(padding) {
 	pointer-events: auto;
 }
-
+*/

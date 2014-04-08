@@ -35,10 +35,8 @@
 		</style>
 	</head>
 	<body>
-		<layer id="one">
+		<layer north="60px" west="60px">
 			<north>
-				<north height="60px"></north>
-				<west width="60px"></west>
 				<center>
 					<west>
 						<div>
@@ -48,67 +46,76 @@
 				</center>
 			</north>
 		</layer>
-		<layer>
-			<north height="70px" class="blue">
-				<north>
-					<west>NW</west>
-					<center>N</center>
-					<east>NE</east>
-				</north>
+		<north height="70px" class="blue">
+			<north>
+				<west>NW</west>
+				<center>N</center>
+				<east>NE</east>
 			</north>
-			<west width="70px" class="green">W</west>
-			<center>
-				<padding size="40px">
-					<north class="blue">North</north>
-					<center class="gray">
-						<panel scroll="y">
-							<panel>
-								<center>
-									<padding size="120px">
+		</north>
+		<west width="70px" class="green">W</west>
+		<center>
+			<padding size="40px">
+				<north class="blue">North</north>
+				<center class="gray">
+					<panel scroll="y">
+						<panel>
+							<center>
+								<padding size="120px">
+									<center>
+										<west width="60px" class="green">W</west>
 										<center>
-											<west width="60px" class="green">W</west>
-											<center>
-												<div><h1>Center</h1></div>
-												<div>This is an example of a border-layout in css</div>
-											</center>
-											<east width="60px" class="red">E</east>
+											<div><h1>Center</h1></div>
+											<div>This is an example of a border-layout in css</div>
 										</center>
-									</padding>
-								</center>
-							</panel>
-							<panel>
-								<center>
-									<padding size="40px">
-										<center>
-											<flow>
-												<p>
-													Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-													incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-													nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-													Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-													fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-													culpa qui officia deserunt mollit anim id est laborum.
-												</p>
-											</flow>
-										</center>
-									</padding>
-								</center>
-							</panel>
+										<east width="60px" class="red">E</east>
+									</center>
+								</padding>
+							</center>
 						</panel>
-					</center>
-					<south class="yellow">South</south>
-				</padding>
-			</center>
-			<east width="70px" class="red">E</east>
-			<south height="70px" class="yellow">
-				<south>
-					<west>SW</west>
-					<center>S</center>
-					<east>SE</east>
-				</south>
+						<panel>
+							<center>
+								<padding size="40px">
+									<center>
+										<flow>
+											<p>
+												Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+												incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+												nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+												Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+												fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+												culpa qui officia deserunt mollit anim id est laborum.
+											</p>
+										</flow>
+									</center>
+								</padding>
+							</center>
+							<layer north="30px" east="20px">
+								<north>
+									<center>
+										<east>
+											<div>
+												<padding size="20px">Layer3</padding>
+											</div>
+										</east>
+									</center>
+								</north>
+							</layer>
+						</panel>
+					</panel>
+				</center>
+				<south class="yellow">South</south>
+			</padding>
+		</center>
+		<east width="70px" class="red">E</east>
+		<south height="70px" class="yellow">
+			<south>
+				<west>SW</west>
+				<center>S</center>
+				<east>SE</east>
 			</south>
-		</layer>
-		<layer>
+		</south>
+		<layer south="20px" east="20px">
 			<south>
 				<center>
 					<east>
@@ -117,8 +124,6 @@
 						</div>
 					</east>
 				</center>
-				<east width="20px"></east>
-				<south height="20px"></south>
 			</south>
 		</layer>
 	</body>

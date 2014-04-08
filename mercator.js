@@ -1,3 +1,5 @@
+var windowLoad = $.Deferred();
+$(window).load(windowLoad.resolve);
 $(function() {
 	var corners = ["north", "west", "center", "east", "south"];
 	$("padding").each(function() {
@@ -82,7 +84,7 @@ $(function() {
 		// Add table row to north and south
 		$(this).children("north,south").wrap("<row collapse/>");
 	});
-	$("north,west,center,east,south,filler,text").each(function() {
+	$("layer,north,west,center,east,south,filler,text").each(function() {
 		// Set css width and height from attributes
 		var width = $(this).attr("width");
 		if(width) {
@@ -93,5 +95,74 @@ $(function() {
 			$(this).css("height", height);
 		}
 	});
+	
+	$("layer").each(function() {
+		var east = $(this).attr("east");
+		if(east) {
+			$(this).css("right", east);
+		}
+		var west = $(this).attr("west");
+		if(west) {
+			$(this).css("left", west);
+		}
+		var north = $(this).attr("north");
+		if(north) {
+			$(this).css("top", north);
+		}
+		var south = $(this).attr("south");
+		if(south) {
+			$(this).css("bottom", south);
+		}
+		var width = $(this).attr("width");
+		var height = $(this).attr("height");
+		if(east||west||width||north||south||height) {
+			var collapse = "both";
+			if((east||west||width) && !(north||south||height)) {
+				collapse = "width";
+			}
+			if(!(east||west||width) && (north||south||height)) {
+				collapse = "height";
+			}
+			$(this).children("borderlayout").attr("collapse", collapse);
+		}
+	});
+	
+	if(isIE()) {
+		$("layer").click(function(event) {
+			$("layer").not($(this)).hide();
+			var element =  document.elementFromPoint(event.pageX, event.pageY);
+			if(element) {
+				$(element).trigger(event);	
+			}
+		});
+	}
+	
 });
+
+function isIE() {
+	return ((navigator.appName == 'Microsoft Internet Explorer') || ((navigator.appName == 'Netscape') && (new RegExp("Trident/.*rv:([0-9]{1,}[\.0-9]{0,})").exec(navigator.userAgent) != null)));
+}
+
+function setHeight(element, height) {
+	if(height) {
+		try {
+			var elements = eval(height);
+			height = getHeight(elements);
+			windowLoad.done(function() {
+				setHeight(element, height);
+			});
+		}
+		catch(e) {
+			element.css("height", height);
+		}
+	}
+}
+
+function getHeight(elements) {
+	var h = 0;
+	elements.each(function() {
+		h += $(this).height();
+	});
+	return h+"px";
+}
 
