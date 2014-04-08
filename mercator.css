@@ -98,8 +98,10 @@ panel,north,west,center,east,south {
 
 layer {
 	position: absolute;
+	display: block;
 }
 
+/*
 layer[north],layer[west],layer[east],layer[south],layer[width],layer[height] {
 	display: block;
 }
@@ -107,7 +109,7 @@ layer[north],layer[west],layer[east],layer[south],layer[width],layer[height] {
 layer:not([north]):not([south]):not([west]):not([east]):not([width]):not([height]) {
 	display: inline;
 }
-
+*/
 /* Not supported in IE (all versions) and webkit on Android
 layer, borderlayout, row, cell, nested, filler, north, west, center, east, south, padding {
 	pointer-events: none;
