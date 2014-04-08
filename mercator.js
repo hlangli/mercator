@@ -84,7 +84,7 @@ $(function() {
 		// Add table row to north and south
 		$(this).children("north,south").wrap("<row collapse/>");
 	});
-	$("layer,north,west,center,east,south,filler,text").each(function() {
+	$("layer,north,west,center,east,south,filler,text,panel").each(function() {
 		// Set css width and height from attributes
 		var width = $(this).attr("width");
 		if(width) {
@@ -93,6 +93,14 @@ $(function() {
 		var height = $(this).attr("height");
 		if(height) {
 			$(this).css("height", height);
+		}
+		var minWidth = $(this).attr("min-width");
+		if(minWidth) {
+			$(this).css("min-width", minWidth);
+		}
+		var minHeight = $(this).attr("min-height");
+		if(minHeight) {
+			$(this).css("min-height", minHeight);
 		}
 	});
 	

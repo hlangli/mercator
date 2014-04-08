@@ -1,6 +1,6 @@
 body {
 	margin: 0px;
-	overflow: hidden;
+	overflow: auto;
 }
 
 borderlayout:not([collapse="height"]):not([collapse="both"]) {
