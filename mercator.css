@@ -3,88 +3,106 @@ body {
 	overflow: auto;
 }
 
-borderlayout:not([collapse="height"]):not([collapse="both"]) {
+body[mercator="ready"] borderlayout:not([collapse="height"]):not([collapse="both"]) {
 	height: 100%;
 }
 
-borderlayout:not([collapse="width"]):not([collapse="both"]) {
+body[mercator="ready"] layer borderlayout:not([collapse="width"]):not([collapse="both"]) {
+	width: auto;
+}
+
+body[mercator="ready"] borderlayout:not([collapse="width"]):not([collapse="both"]) {
 	width: 100%;
 }
 
-padding {
-	width: 100%;
-	height: 100%;	
+body[mercator="ready"] padding {
+	display: table;
+	table-layout: fixed;
+	height: 100%;
 }
 
-borderlayout {
-	display: inline-table;
+body[mercator="ready"] layer padding {
+	width: initial;
 }
 
-row {
+body[mercator="ready"] borderlayout {
+	display: table;
+}
+
+body[mercator="ready"] *:not(layer) borderlayout:not([auto="true"]) {
+	table-layout: fixed;
+}
+
+body[mercator="ready"] row {
 	display: table-row;	
 	width: 100%;
 }
 
-row:not([collapse]) {
+body[mercator="ready"] row:not([collapse]) {
 	height: 100%;
 }
 
-nested {
-	display: inline-table;
+body[mercator="ready"] nested {
+	display: table;
+	table-layout: auto;
 	height: 100%;
 	width: 100%;
 }
 
-north, east, center, west, south, cell {
+body[mercator="ready"] north, body[mercator="ready"] east, body[mercator="ready"] center, body[mercator="ready"] west, body[mercator="ready"] south, body[mercator="ready"] cell {
 	display: table-cell;
 }
 
-east, center, west {
+body[mercator="ready"] *:not(north):not(south) east, body[mercator="ready"] *:not(north):not(south) center, body[mercator="ready"] *:not(north):not(south) west {
 	height: 100%;
 }
 
-north {
+body[mercator="ready"] north {
 	text-align: center;
 }
-east {
+body[mercator="ready"] east {
 	text-align: right;
 }
-center {
+body[mercator="ready"] center {
 	text-align: center;
 }
-center:not([collapse]) {
+body[mercator="ready"] *:not(west):not(east) center {
 	width: 100%;
 }
-west {
+body[mercator="ready"] west {
 	text-align: left;
 }
-south {
+body[mercator="ready"] south {
 	text-align: center;
 	vertical-align: bottom;
 }
 
-nested > row > * {
+body[mercator="ready"] row > west, body[mercator="ready"] row > center, body[mercator="ready"] row > east {
 	vertical-align: middle;
 }
 
-panel {
+body[mercator="ready"] panel {
 	display: block;
+}
+body[mercator="ready"] *:not(west):not(east) panel {
 	width: 100%;
+}
+body[mercator="ready"] *:not(north):not(south) panel {
 	height: 100%;
 }
 
-panel[scroll="y"] {
+body[mercator="ready"] panel[scroll="y"] {
 	overflow-y: scroll;
 }
-panel[scroll="x"] {
+body[mercator="ready"] panel[scroll="x"] {
 	overflow-x: scroll;
 }
 
-filler, text {
+body[mercator="ready"] filler, body[mercator="ready"] text {
 	display: block;
 }
 
-flow {
+body[mercator="ready"] flow {
 	display: block;
 	text-align: left;
 	vertical-align: top;
@@ -92,11 +110,11 @@ flow {
 	height: 100%;	
 }
 
-panel,north,west,center,east,south {
+body[mercator="ready"] panel,body[mercator="ready"] north,body[mercator="ready"] west,body[mercator="ready"] center,body[mercator="ready"] east,body[mercator="ready"] south {
 	position: relative;
 }
 
-layer {
+body[mercator="ready"] layer {
 	position: absolute;
 	display: block;
 }
